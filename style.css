@@ -1,0 +1,13 @@
+.jumbotron {
+    padding-top: 5rem;
+    background-color:#a2d9ff;
+}
+/* Kalau id gunakan tanda # */
+#project {
+
+    background-color:#a2d9ff;
+}
+
+section {
+    padding-top: 5rem;
+}
