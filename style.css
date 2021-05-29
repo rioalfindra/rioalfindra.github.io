@@ -1,13 +1,39 @@
 .jumbotron {
-    padding-top: 5rem;
-    background-color:#a2d9ff;
+    padding-top: 7rem;
+    background-color:    #a2d9ff;
+    ;
 }
 /* Kalau id gunakan tanda # */
 #project {
 
     background-color:#a2d9ff;
 }
+.kotak {
+    width: 80px;
+    height: 80px;
+    
+    line-height: 50px;
+    transition: 0.7s;
+}
+.kotak:hover {
+    transform: rotate(360deg);
+    border-radius: 50%;
+    background-color:darkgreen;
+    color: black;
+    font-size: 20px;
+    center
+}
+.title {
+    font-family: Odibee Sans, sans-serif ;
+    
+}
+.viga {
+    /* rock salt */
+    font-family: rock salt, sans-serif;
 
-section {
-    padding-top: 5rem;
+    font-size: 25px;
+}
+
+h2 {
+    font-family: Lobster;
 }
