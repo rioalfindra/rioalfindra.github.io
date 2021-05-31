@@ -114,20 +114,33 @@
 			</div>
 			<div class="row justify-content-center ">
 				<div class="col-md-6 ">
-					<form>
+					<form name="Contact-Form">
 						<div class="mb-3">
 						  <label for="nama" class="form-label">Nama Lengkap</label>
-						  <input type="email" class="form-control" id="nama" aria-describedby="emailHelp">
+						  <input type="text" class="form-control" id="nama" name="nama" aria-describedby="emailHelp">
+						</div>
+						<div class="mb-3">
+						  <label for="nohp" class="form-label">No Handphone</label>
+						  <input type="number" class="form-control" id="nohp" name="nohp">
 						</div>
 						<div class="mb-3">
 						  <label for="email" class="form-label">Email</label>
-						  <input type="password" class="form-control" id="email">
+						  <input type="email" class="form-control" id="email" name="email">
 						</div>
 						<div class="mb-3">
 							<label for="pesan" class="form-label">Pesan</label>
-							<textarea class="form-control" id="pesan" rows="3"></textarea>
-						  </div>
-						<button type="submit" class="btn btn-primary kotak">Kirim</button>
+							<textarea class="form-control" id="pesan" name="pesan" rows="3"></textarea>
+						</div>
+						<div class="alert alert-success alert-dismissible fade show d-none my-alert" role="alert">
+						  <strong>Terima Kasih!</strong> Pesan anda sudah saya terima.
+						  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+						</div>
+						<button type="submit" class="btn btn-primary kotak btn-kirim">Kirim</button>
+						<!--di bootstrap ada perintah d-none (display none atau untuk menghilangankan dari layar) -->
+						<button class="btn btn-primary btn-loading d-none" type="button" disabled>
+							<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+							Loading...
+						  </button>
 					  </form>
 				</div>
 			</div>
@@ -143,5 +156,33 @@
 	<!-- End Footer -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 
+	<script>
+		const scriptURL = 'https://script.google.com/macros/s/AKfycbwqdESBG7xAe0rkliaTVj26Kf_GKRMMwdUxl2WT7-zzv4Xb45DZ2VcxPJb4zBj8mRCn/exec'
+		const form = document.forms['Contact-Form'];
+		const btnKirim = document.querySelector('.btn-loading');
+		const btnLoading = document.querySelector('.btn-kirim');
+		const myalert = document.querySelector('.my-alert');
+	  
+		form.addEventListener('submit', e => {
+		  e.preventDefault()
+		  // ketika tombol kirim di klik
+		  // tampilkan tombol loading, hilangkan tombol kirim
+		  // carikan saya di btnLoading class yang nama nya d-none toggle maksudnya jika ada akan di hapus jika tidak akan ditambahkan
+		  btnLoading.classList.toggle('d-none');
+		  btnKirim.classList.toggle('d-none');
+		  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+		  // untuk mengembalikan tombol jika sudah selesai proses
+		  // tambahkan tanda {} jika kita ingin lebih satu bari atau lebih dari satu perintah
+			.then(response => {
+				btnLoading.classList.toggle('d-none');
+		  		btnKirim.classList.toggle('d-none');
+				  // tampilkan alert
+				myalert.classList.toggle('d-none');
+				form.reset();
+				console.log('Success!', response)
+			})
+			.catch(error => console.error('Error!', error.message))
+		})
+	  </script>
   </body>
 </html>
