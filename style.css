@@ -37,3 +37,12 @@
 h2 {
     font-family: Lobster;
 }
+
+.gallery-img {
+    width: 100%;
+}
+
+/* Cari kan id gallery yang class row semuanya hilangkan padding nya */
+#gallery .row > * {
+    padding: 0;
+}
