@@ -21,10 +21,36 @@
     <title>My Portpolio</title>
   </head>
   <body id="home">
+
+	<!-- Start modal -->
+	<!-- <div class="modal fade" tabindex="-1" id="modal" role="dialog">
+		<div class="modal-dialog" role="document">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <h5 class="modal-title">Modal title</h5>
+			  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+			  <p>Modal body text goes here.</p>
+			</div>
+			<div class="modal-footer">
+			  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+			  <button type="button" class="btn btn-primary">Save changes</button>
+			</div>
+		  </div>
+		</div>
+	  </div> -->
+	<!-- End Modal -->
+
 	<!-- Start Navbar -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow p-3 fixed-top">
 		<div class="container">
-		  <a class="navbar-brand title" href="#home">My Portfolio</a>
+			<label for="btn_music"  style="color: antiquewhite;">Click Icon Music  -</label>
+			<button type="button" class="btn btn-outline-primary btn-sm btn-ply " id='btn_music' onclick="music()">
+				<img src="https://img.icons8.com/ios/40/ffffff/youtube-music.png" />
+			</button>
+			<audio id='bgmusic' src="https://media1.vocaroo.com/mp3/1cZPIlFtB9jV" loop></audio>
+		  <a class="navbar-brand title " href="#home">- My Portfolio</audio>
 		  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		  </button>
@@ -45,7 +71,7 @@
 	<!-- Start Jumbotron bootstrap 4.6 -->
 	<section class="jumbotron text-center ">
 		<img src="img/1621152240779.jpg" width="200" class="rounded-circle" />
-		<h1 class="display-4 viga font-effect-neon">Rio Alfindra, S.T</h1>
+		<h1 class="display-4 viga font-effect-neon">Rio Alfindra, S.Kom</h1>
 		<p class="lead">Bismillah</p>
 		<p class="lead2">-------------</p>
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,32L48,48C96,64,192,96,288,106.7C384,117,480,107,576,106.7C672,107,768,117,864,112C960,107,1056,85,1152,96C1248,107,1344,149,1392,170.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
@@ -288,6 +314,17 @@
 			})
 			.catch(error => console.error('Error!', error.message))
 		})
+
+		// Js Musik
+		var audioplaying = false;
+		function music(){
+			var audio = document.getElementById("bgmusic");
+			if (!audioplaying) audio.play();
+			
+			else audio.pause();
+			audioplaying = !audioplaying;
+		}
+		// $('#modal1').modal('show')
 	  </script>
   </body>
 </html>

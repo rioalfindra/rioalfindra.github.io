@@ -8,6 +8,7 @@
 
     background-color:#a2d9ff;
 }
+
 .kotak {
     width: 80px;
     height: 80px;
@@ -15,18 +16,21 @@
     line-height: 50px;
     transition: 0.7s;
 }
+
 .kotak:hover {
     transform: rotate(360deg);
     border-radius: 50%;
     background-color:darkgreen;
     color: black;
     font-size: 20px;
-    center
+    text-align: center;
 }
+
 .title {
     font-family: Odibee Sans, sans-serif ;
     
 }
+
 .viga {
     /* rock salt */
     font-family: rock salt, sans-serif;
@@ -45,4 +49,20 @@ h2 {
 /* Cari kan id gallery yang class row semuanya hilangkan padding nya */
 #gallery .row > * {
     padding: 0;
+}
+
+.btn-ply {
+    width: 60px;
+    height: 60px;
+    
+    line-height: 50px;
+    transition: 0.7s;
+}
+
+.btn-ply:hover {
+    transform: rotate(360deg);
+    border-radius: 50%;
+    background-color: transparent;
+    color: black;
+    font-size: 20px;
 }
