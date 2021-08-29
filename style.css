@@ -1,18 +1,19 @@
 .jumbotron {
     padding-top: 7rem;
-    background-color:    #a2d9ff;
+    background-color: #a2d9ff;
     ;
 }
+
 /* Kalau id gunakan tanda # */
 #project {
 
-    background-color:#a2d9ff;
+    background-color: #a2d9ff;
 }
 
 .kotak {
     width: 80px;
     height: 80px;
-    
+
     line-height: 50px;
     transition: 0.7s;
 }
@@ -20,15 +21,15 @@
 .kotak:hover {
     transform: rotate(360deg);
     border-radius: 50%;
-    background-color:darkgreen;
+    background-color: darkgreen;
     color: black;
     font-size: 20px;
     text-align: center;
 }
 
 .title {
-    font-family: Odibee Sans, sans-serif ;
-    
+    font-family: Odibee Sans, sans-serif;
+
 }
 
 .viga {
@@ -47,14 +48,14 @@ h2 {
 }
 
 /* Cari kan id gallery yang class row semuanya hilangkan padding nya */
-#gallery .row > * {
+#gallery .row>* {
     padding: 0;
 }
 
 .btn-ply {
-    width: 60px;
-    height: 60px;
-    
+    width: 30px;
+    height: 30px;
+
     line-height: 50px;
     transition: 0.7s;
 }
